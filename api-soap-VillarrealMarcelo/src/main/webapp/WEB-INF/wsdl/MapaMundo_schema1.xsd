@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://soap.cibertec.edu/" xmlns:tns="http://soap.cibertec.edu/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="obtenerCantidadPaises" type="tns:obtenerCantidadPaises"/>
+
+  <xs:element name="obtenerCantidadPaisesResponse" type="tns:obtenerCantidadPaisesResponse"/>
+
+  <xs:element name="obtenerListaPaises" type="tns:obtenerListaPaises"/>
+
+  <xs:element name="obtenerListaPaisesResponse" type="tns:obtenerListaPaisesResponse"/>
+
+  <xs:complexType name="obtenerListaPaises">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="obtenerListaPaisesResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:pais" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="pais">
+    <xs:sequence>
+      <xs:element name="capital" type="xs:string" minOccurs="0"/>
+      <xs:element name="idioma" type="xs:string" minOccurs="0"/>
+      <xs:element name="nombre" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="obtenerCantidadPaises">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="obtenerCantidadPaisesResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
